@@ -6,9 +6,14 @@ address formatted in the manner that you would usually see it
 on the outside of an envelope.  Your program does not need to 
 read any input from the user.  (9 lines)
 """
-print("Aurora Wibowo")
-print("5535 Pfeiffer Rd")
-print("Cincinnati, OH 45242")
+def address():
+    name = input("what is your name? ")
+    homeAddress = input("what is the first line of your address? ")
+    cityStateZip = input("what is the second line of your address? ")
+    print(name)
+    print(homeAddress)
+    print(cityStateZip)
+address()
 
 
 """
@@ -18,8 +23,11 @@ The program should respond with a message that says hello to
 the user, using his or her name.  (9 lines)
 """
 
-name = input("what is your name? ")
-print("hello, " + name)
+def hello():
+    name = input("what is your name? ")
+    print("hello, " + name)
+
+hello()
 
 """
 Exercise 3:  Area of a Room
@@ -32,10 +40,13 @@ either feet or meters, depending on which unit you are more
 comfortable working with.  (13 lines)
 """
 
-roomWidth = input("what is the width of the room, in feet? ")
-roomLength = input("what is the length of the room, in feet? ")
-roomArea = float(roomWidth) * float(roomLength)
-print("the area of the room is " + str(roomArea) + " feet")
+def area():
+    roomWidth = input("what is the width of the room, in feet? ")
+    roomLength = input("what is the length of the room, in feet? ")
+    roomArea = float(roomWidth) * float(roomLength)
+    print("the area of the room is " + str(roomArea) + " feet")
+
+area()
 
 """
 Exercise 4:  Area of a Field
@@ -44,10 +55,13 @@ farmer’s field from the user in feet.  Display the
 area of the field in acres.  
 Hint: There are 43,560 square feet in an acre
 """
-fieldWidth = input("what is the width of the field, in feet? ")
-fieldLength = input("what is the length of the field, in feet? ")
-fieldArea = (float(fieldWidth) * float(fieldLength)) / 43560
-print("the area of the field is " + str(fieldArea) + " acres")
+def area():    
+    fieldWidth = input("what is the width of the field, in feet? ")
+    fieldLength = input("what is the length of the field, in feet? ")
+    fieldArea = (float(fieldWidth) * float(fieldLength)) / 43560
+    print("the area of the field is " + str(fieldArea) + " acres")
+
+area()
 
 
 """

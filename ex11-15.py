@@ -8,6 +8,12 @@ Then create a program that reads a value from the user in American units
 and display the equivalent fuel efficiency in Canadian units.
 """
 
+def fuelEfficiency():
+    mpg = float(input("how many miles per gallon is your car?"))
+    lp100L = 282.481 / mpg
+    print("in L/100km, it is, " + str(lp100L))
+
+
 """
 Exercise 12:  Distance Between Two Points on Earth
 The surface of the Earth is curved, and teh distance between degrees
@@ -35,6 +41,14 @@ the distance with the formula discussed previously.  The math module
 contains a function named RADIANS which converts from degrees to radians.
 """
 
+import math
+latitude = math.radians(float(input("what is the latitude of the first one? ")))
+longitude = math.radians(float(input("what is the longitude of the first one? ")))
+latitude2 = math.radians(float(input("what is the latitude of the second one? ")))
+longitude2 = math.radians(float(input("what is the longitude of the second one? ")))
+distance = 6371.01 * math.acos(math.sin(latitude) * math.sin(latitude2) + math.cos(latitude) * math.cos(latitude2) * math.cos(longitude - longitude2))
+print("the distance in km is " + str(distance))
+
 """
 Exercise 13: Making Change
 Consider the software that runs on a self-checkout machine.  One task that
@@ -54,6 +68,28 @@ The two dollar coin, referred to as a toonie, was introduced 9 years later.
 It's name is derived from the combination of the number two
 and the name of the loonie.
 """
+def change():
+    change = int(input("how much change do you need? "))
+    toonie = change // 200
+    remainder = change - (toonie * 200)
+    loonie = remainder // 100
+    remainder = remainder - (loonie * 100)
+    quarters = remainder // 25
+    remainder = remainder - (quarters * 25)
+    dimes = remainder // 10
+    remainder = remainder - (dimes * 10)
+    nickels = remainder // 5
+    remainder = remainder - (nickels * 5)
+    pennies = remainder // 1
+
+    print("toonies: " + str(toonie))
+    print("loonies: " + str(loonie))
+    print("quarters: " + str(quarters))
+    print("dimes: " + str(dimes))
+    print("nickels: " + str(nickels))
+    print("pennies: " + str(pennies))
+
+#change()
 
 """
 Exercise 14:  Height Units
@@ -66,6 +102,13 @@ compute and display the equivalent number of centimeters.
 *** HINT ***
 One foot is 12 inches.  One in ch is 2.54 centimeters.
 """
+def height():
+    feet = float(input("how tall are you just your feet? "))
+    inch = float(input("how tall are you just you inches? "))
+    cmheight = (feet * 30.48) + (inch * 2.54)
+    print("your height in cm is " + str(cmheight))
+
+#height()
 
 """
 Exercise 15:  Distance Units
@@ -79,5 +122,13 @@ the equivalent distance in inches, yards, and miles.
 63360 inches = 1760 yards = 1 mile
 """
 
-if __name__ == "__main__":
-    print("Hello World!")
+def distanceUnits():
+    feet = float(input("give me a number in feet: "))
+    inches = feet * 12
+    yards = feet/ 3
+    miles = yards / 1760
+
+    print("inches" + str(inches))
+    print("yards" + str(yards))
+    print("miles" + str(miles))
+#distanceUnits()

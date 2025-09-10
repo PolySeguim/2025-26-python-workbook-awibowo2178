@@ -10,6 +10,14 @@ Hint:  The are of  circle is computed using the formula area = pi*r**2.  The
 volume of a sphere is computed using the formula volume = 4/3 * pi * r**3.
 """
 
+import math
+radius = float(input("give me a number: "))
+area = math.pi * radius**2
+volume = 4/3 * math.pi * radius**3
+print("the area is " + str(area))
+print("the volume is " + str(volume))
+
+
 """
 Exercise 17:  Heat Capacity
 The amount of energy required to increase the temperature of one gram of 
@@ -56,6 +64,9 @@ when the initial speed, vi, acceleration, a, and distance, d, are known.
 (16 lines)
 """
 
+height = float(input("what is the height in meters? "))
+vf = (0 ** 2 + (2 * height * 9.8)) ** (1/2)
+print("the speed is " + str(vf))
 
 """
 Exercise 20: Ideal Gas Law
@@ -81,5 +92,8 @@ by 5/9 and then add 273.15 to it.
 (19 lines)
 """
 
-if __name__ == "__main__":
-    print("Hi there!")
+pressure = float(input("what is the pressure? "))
+volume = float(input("what is the volume? "))
+temperature = float(input("what is the temperature in Celsius? "))
+amountGas = (pressure * volume) / ((temperature + 273.15) * 8.314)
+print("the amount of gas is " + str(amountGas))
